@@ -25,7 +25,8 @@ jobs:
       # 3. Generate the .nuxt directory
       - name: Generate .nuxt directory
         run: npx nuxi prepare
-        
+
       # 4. Run the tests
       - name: Run tests
         run: echo "Tests passed!"
+        
