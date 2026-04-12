@@ -1,27 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
-  css: [
-    '~/assets/css/main.css',
-  ],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    }
-  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@vesp/nuxt-fontawesome',
     '@nuxt/image',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
   ],
+  devtools: { enabled: true },
+  css: [
+    '~/assets/css/main.css',
+  ],
+  compatibilityDate: '2025-07-15',
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   eslint: {
     checker: true,
     config: {
-      stylistic: true // or pass an object for specific options like { semi: false }
-    }
+      stylistic: true, // or pass an object for specific options like { semi: false }
+    },
   },
   fontawesome: {
     icons: {
@@ -39,10 +39,10 @@ export default defineNuxtConfig({
         'truck',
         'motorcycle',
         'bag-shopping',
-        'star'
+        'star',
       ],
       regular: ['comment', 'clock'],
-      brands: ['facebook', 'twitter', 'youtube', 'instagram']
-    }
-  }
+      brands: ['facebook', 'twitter', 'youtube', 'instagram'],
+    },
+  },
 })

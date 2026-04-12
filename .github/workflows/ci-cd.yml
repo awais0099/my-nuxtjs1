@@ -21,9 +21,10 @@ jobs:
       # 2. Install dependencies
       - name: Install dependencies
         run: npm install
-
-      - name: Lint code
-        run: npm run lint
+      
+      # 3. Generate the .nuxt directory
+      - name: Generate .nuxt directory
+        run: npx nuxi prepare
         
       # 4. Run the tests
       - name: Run tests

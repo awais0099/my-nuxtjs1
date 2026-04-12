@@ -27,6 +27,7 @@
     "@fortawesome/free-regular-svg-icons": "^7.2.0",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
     "@iconify-json/material-symbols": "^1.2.65",
-    "eslint-plugin-tailwindcss": "^3.18.2"
+    "eslint-plugin-tailwindcss": "^3.18.2",
+    "vite-plugin-eslint2": "^5.1.0"
   }
 }
