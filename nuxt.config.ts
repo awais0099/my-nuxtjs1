@@ -14,8 +14,15 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@vesp/nuxt-fontawesome',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxt/eslint'
   ],
+  eslint: {
+    checker: true,
+    config: {
+      stylistic: true // or pass an object for specific options like { semi: false }
+    }
+  },
   fontawesome: {
     icons: {
       solid: [

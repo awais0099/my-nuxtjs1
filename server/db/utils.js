@@ -10,7 +10,7 @@ export async function readData() {
     } catch (error) {
         throw createError({
             statusCode: 500,
-            statusMessage: "Unable to read data"
+            statusMessage: "Unable to read data" + error.statusMessage
         });
     }
 }
@@ -19,10 +19,9 @@ export async function writeData(data) {
     try {
         await fs.writeFile(dataPath, JSON.stringify(data));
     } catch (error) {
-        console.log(error);
         throw createError({
             statusCode: 500,
-            statusMessage: "Unable to write data"
+            statusMessage: "Unable to write data" + error.statusMessage
         });
     }
 }

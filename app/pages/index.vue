@@ -2,222 +2,234 @@
 import CTA from '~/components/CTA.vue';
 import FlashDealsItem from '~/components/FlashDealsItem.vue';
 import NavBar from '~/components/NavBar.vue';
+import AppFooter from '~/components/AppFooter.vue';
 
 </script>
 
 <template>
-    <NavBar />
+    <div id="wrapper">
+        <NavBar />
 
-    <!-- hero section -->
-    <div class="bg-yellow-500 pt-4 w-full">
-        <div class="relative max-w-5xl mx-auto md:h-[25rem] md:px-8 lg:px-0">
-            <div
-                class="md:w-[28.125rem] lg:w-[34.375rem] h-full flex flex-col justify-center items-center md:items-start md:gap-2 gap-1 text-center md:text-left px-4 md:px-0">
-                <h1 class="text-white font-bold text-2xl md:text-5xl">Are you starving?</h1>
-                <p class="text-sm text-black/70 mt-1 mb-4">Within a few clicks, find meals that are
-                    accessible
-                    near
-                    you</p>
+        <!-- hero section -->
+        <div class="w-full bg-yellow-500 pt-4">
+            <div class="relative mx-auto max-w-5xl md:h-[25rem] md:px-8 lg:px-0">
+                <div
+                    class="flex h-full flex-col items-center justify-center gap-1 px-4 text-center md:w-[28.125rem] md:items-start md:gap-2 md:px-0 md:text-left lg:w-[34.375rem]">
+                    <h1 class="text-2xl font-bold text-white md:text-5xl">Are you starving?</h1>
+                    <p class="mb-4 mt-1 text-sm text-black/70">Within a few clicks, find meals that are
+                        accessible
+                        near
+                        you</p>
 
-                <div class="bg-white p-4 w-full rounded-xl shadow-xl">
-                    <div class="flex items-center gap-4 mb-12">
-                        <div class="flex items-center gap-2">
-                            <font-awesome icon="motorcycle" class="text-[#F58D00]" />
-                            <span class="font-bold text-[#F58D00]">Delivery</span>
+                    <div class="w-full rounded-xl bg-white p-4 shadow-xl">
+                        <div class="mb-12 flex items-center gap-4">
+                            <div class="flex items-center gap-2">
+                                <font-awesome icon="motorcycle" class="text-[#F58D00]" />
+                                <span class="font-bold text-[#F58D00]">Delivery</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <font-awesome icon="bag-shopping" class="text-gray-500" />
+                                <span class="font-bold text-gray-500">Pickup</span>
+                            </div>
                         </div>
-                        <div class="flex items-center gap-2">
-                            <font-awesome icon="bag-shopping" class="text-gray-500" />
-                            <span class="font-bold text-gray-500">Pickup</span>
-                        </div>
+
+                        <form
+action="#" method="get" role="food-search"
+                            class="flex flex-col items-center gap-4 md:flex-row">
+                            <div class="relative w-full">
+                                <font-awesome icon="location-dot" class="absolute left-3 top-4 z-10 text-[#F58D00]" />
+                                <input
+id="address" type="text" name="address" placeholder="Enter your address"
+                                    class="relative w-full bg-gray-200 py-4 pl-10 focus-visible:outline-yellow-500">
+                            </div>
+                            <button
+                                class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-[#F58D00] px-8 py-4 transition-transform hover:bg-[#F58D00]/80 active:scale-95">
+                                <span class="font-bold text-white">Find Food</span>
+                            </button>
+                        </form>
                     </div>
-
-                    <form action="#" method="get" role="food-search"
-                        class="flex flex-col md:flex-row items-center gap-4">
-                        <div class="relative w-full">
-                            <font-awesome icon="location-dot" class="text-[#F58D00] absolute z-10 top-4 left-3" />
-                            <input type="text" name="address" id="address" placeholder="Enter your address"
-                                class="bg-gray-200 pl-10 relative py-4 w-full focus-visible:outline-yellow-500" />
-                        </div>
-                        <button
-                            class="flex items-center justify-center gap-2 px-8 py-4 bg-[#F58D00] hover:bg-[#F58D00]/80 rounded-md w-full active:scale-95 transition-transform cursor-pointer">
-                            <span class="font-bold text-white">Find Food</span>
-                        </button>
-                    </form>
                 </div>
-            </div>
-            <NuxtImg src="/img/Image Base.png" alt="food-image"
-                class="w-[15.625rem] h-[12.5rem] mx-auto mt-8 md:mt-0 md:mx-0 block md:w-[18.75rem] md:h-[15.625rem] md:absolute md:bottom-0 md:right-[7%] lg:right-[1%] lg:w-[25rem] lg:h-[21.875rem]" />
-        </div>
-    </div>
-
-    <!-- flash deals -->
-    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto my-12 px-6">
-        <!-- food item 1 -->
-        <FlashDealsItem title="Greys Vage" imgPath="/img/fdeals-1.png" :discount="15" :daysRemaining="2" />
-        <FlashDealsItem title="Greys Vage" imgPath="/img/fdeals-2.png" :discount="15" :daysRemaining="6" />
-        <FlashDealsItem title="Greys Vage" imgPath="/img/fdeals-3.png" :discount="15" :daysRemaining="10" />
-        <FlashDealsItem title="Greys Vage" imgPath="/img/fdeals-4.png" :discount="15" :daysRemaining="7" />
-    </div>
-
-    <!-- how does it work section -->
-    <div class="bg-gradient-to-b from-gray-100 to-white dark:from-gray-800 dark:to-[#121212] py-6 px-4 md:px-0 mb-12">
-        <h1 class="font-bold md:text-3xl text-2xl text-black dark:text-gray-100 text-center mb-6">How does it work</h1>
-        <div class="flex flex-col md:flex-row gap-5 md:w-[85%] md:mx-auto">
-            <div class="text-center md:w-[18.75rem] w-full flex flex-col items-center md:gap-4">
-                <font-awesome icon="location-dot" class="text-7xl" />
-                <div>
-                    <h6 class="font-bold text-lg md:mb-1 mb-0 text-[#434343] dark:text-gray-100">Select location</h6>
-                    <p class="text-sm text-gray-500">Choose the location where your food will be delivered.</p>
-                </div>
-            </div>
-
-            <div class="text-center md:w-[18.75rem] w-full flex flex-col items-center md:gap-4 gap-2">
-                <font-awesome icon="list-check" class="text-7xl" />
-                <div>
-                    <h6 class="font-bold text-lg md:mb-1 mb-0 text-[#434343] dark:text-gray-100">Choose order</h6>
-                    <p class="text-sm text-gray-500">Choose the location where your food will be delivered.</p>
-                </div>
-            </div>
-
-            <div class="text-center md:w-[18.75rem] w-full flex flex-col items-center md:gap-4 gap-2">
-                <font-awesome icon="money-bill-transfer" class="text-7xl" />
-                <div>
-                    <h6 class="font-bold text-lg md:mb-1 mb-0 text-[#434343] dark:text-gray-100">Pay advance</h6>
-                    <p class="text-sm text-gray-500">Choose the location where your food will be delivered.</p>
-                </div>
-            </div>
-
-            <div class="text-center md:w-[18.75rem] w-full flex flex-col items-center md:gap-4 gap-2">
-                <font-awesome icon="utensils" class="text-7xl" />
-                <div>
-                    <h6 class="font-bold text-lg md:mb-1 mb-0 text-[#434343] dark:text-gray-100">Enjoy meals</h6>
-                    <p class="text-sm text-gray-500">Choose the location where your food will be delivered.</p>
-                </div>
+                <NuxtImg
+src="/img/Image Base.png" alt="food-image"
+                    class="mx-auto mt-8 block h-[12.5rem] w-[15.625rem] md:absolute md:bottom-0 md:right-[7%] md:mx-0 md:mt-0 md:h-[15.625rem] md:w-[18.75rem] lg:right-[1%] lg:h-[21.875rem] lg:w-[25rem]" />
             </div>
         </div>
-    </div>
 
-    <!-- popular items section -->
-    <div class="px-4 lg:px-0 w-full max-w-5xl mx-auto mb-20">
-        <h1 class="font-bold text-black dark:text-gray-100 md:text-3xl text-2xl text-center mb-6">Popular items</h1>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-
+        <!-- flash deals -->
+        <div class="mx-auto my-12 grid max-w-5xl grid-cols-1 gap-4 px-6 md:grid-cols-3 lg:grid-cols-4">
             <!-- food item 1 -->
-            <PopularItem title="Cheese Burger" brandTitle="Burger Arena" imgPath="/img/cheese_burger.jpg" :price="10.99"
-                currencySymbol="$" detailsPageLink="#" :rating="4.5" />
-
-            <!-- food item 2 -->
-            <PopularItem title="Toffe’s Cake" brandTitle="Top Sticks" imgPath="/img/toffe_cake.png" :price="3.88"
-                currencySymbol="$" detailsPageLink="#" :rating="4.5" />
-
-            <!-- food item 3 -->
-            <PopularItem title="Dancake" brandTitle="Cake World" imgPath="/img/dancake.png" :price="3.88"
-                currencySymbol="$" detailsPageLink="#" :rating="4.5" />
-
-            <!-- food item 4 -->
-            <PopularItem title="Crispy Sandwitch" brandTitle="Fastfood Dine" imgPath="/img/crispy_cake.png"
-                :price="3.88" currencySymbol="$" detailsPageLink="#" :rating="4.5" />
-
-            <!-- food item 5 -->
-            <PopularItem title="Thai Soup" brandTitle="Foody main" imgPath="/img/thai_soup.png" :price="3.88"
-                currencySymbol="$" detailsPageLink="#" :rating="4.5" />
-        </div>
-    </div>
-
-    <!-- featured restaurants section -->
-    <div class="w-full max-w-5xl mx-auto px-4 md:px-4 lg:px-0 mb-20">
-        <h1 class="font-bold text-black dark:text-gray-100 md:text-3xl text-2xl text-center mb-6">Featured Restaurants
-        </h1>
-        <div class="gap-x-6 gap-y-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
-
-            <FeaturedRestaurant imgPath="/img/feature-1.png" brandTitle="Foodworld" brandImgPath="/img/friendly.png"
-                :discount="15" :isOpenTomorrow="true" :rating="4.5" />
-
-            <!-- item 2 -->
-            <FeaturedRestaurant imgPath="/img/feature-2.png" brandTitle="Pizza Hub" brandImgPath="/img/pizzahub.png"
-                :discount="15" :isOpenTomorrow="true" :rating="4.5" />
-
-            <!-- item 3 -->
-            <FeaturedRestaurant imgPath="/img/feature-3.png" brandTitle="Donuts hut"
-                brandImgPath="/img/donuts-hut-logo.png" :discount="15" :isOpenTomorrow="true" :rating="4.5" />
-
-            <!-- item 4 -->
-            <FeaturedRestaurant imgPath="/img/feature-4.png" brandTitle="Donuts hut"
-                brandImgPath="/img/subway.png" :discount="15" :isOpenTomorrow="true" :rating="4.5" />
-
-            <!-- item 5 -->
-            <FeaturedRestaurant imgPath="/img/feature-5.png" brandTitle="Ruby Tuesday" brandImgPath="/img/ruby.png"
-                :discount="15" :isOpenTomorrow="true" :rating="4.5" />
-
-            <!-- item 6 -->
-            <FeaturedRestaurant imgPath="/img/feature-6.png" brandTitle="Kuakata Fried Chicken"
-                brandImgPath="/img/kfc.png" :discount="15" :isOpenTomorrow="true" :rating="4.5" />
-
-            <!-- item 7 -->
-            <FeaturedRestaurant imgPath="/img/feature-7.png" brandTitle="Red Square" brandImgPath="/img/red-squre.png"
-                :discount="15" :isOpenTomorrow="true" :rating="4.5" />
-
-            <!-- item 8 -->
-            <FeaturedRestaurant imgPath="/img/feature-8.png" brandTitle="Taco Bell" brandImgPath="/img/taco.png"
-                :discount="15" :isOpenTomorrow="true" :rating="4.5" />
-
+            <FlashDealsItem title="Greys Vage" img-path="/img/fdeals-1.png" :discount="15" :days-remaining="2" />
+            <FlashDealsItem title="Greys Vage" img-path="/img/fdeals-2.png" :discount="15" :days-remaining="6" />
+            <FlashDealsItem title="Greys Vage" img-path="/img/fdeals-3.png" :discount="15" :days-remaining="10" />
+            <FlashDealsItem title="Greys Vage" img-path="/img/fdeals-4.png" :discount="15" :days-remaining="7" />
         </div>
 
-        <div class="mt-4 md:mt-12 w-full md:text-center">
-            <button
-                class="bg-black text-white rounded-sm py-2 px-8 md:px-16 w-full md:w-fit active:scale-95 cursor-pointer active:transition-all hover:bg-gray-800 hover:transition-colors">
-                <span class="font-bold">View All</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
+        <!-- how does it work section -->
+        <div
+            class="mb-12 bg-gradient-to-b from-gray-100 to-white px-4 py-6 md:px-0 dark:from-gray-800 dark:to-[#121212]">
+            <h1 class="mb-6 text-center text-2xl font-bold text-black md:text-3xl dark:text-gray-100">How does it work
+            </h1>
+            <div class="flex flex-col gap-5 md:mx-auto md:w-[85%] md:flex-row">
+                <div class="flex w-full flex-col items-center text-center md:w-[18.75rem] md:gap-4">
+                    <font-awesome icon="location-dot" class="text-7xl" />
+                    <div>
+                        <h6 class="mb-0 text-lg font-bold text-[#434343] md:mb-1 dark:text-gray-100">Select location
+                        </h6>
+                        <p class="text-sm text-gray-500">Choose the location where your food will be delivered.</p>
+                    </div>
+                </div>
+
+                <div class="flex w-full flex-col items-center gap-2 text-center md:w-[18.75rem] md:gap-4">
+                    <font-awesome icon="list-check" class="text-7xl" />
+                    <div>
+                        <h6 class="mb-0 text-lg font-bold text-[#434343] md:mb-1 dark:text-gray-100">Choose order</h6>
+                        <p class="text-sm text-gray-500">Choose the location where your food will be delivered.</p>
+                    </div>
+                </div>
+
+                <div class="flex w-full flex-col items-center gap-2 text-center md:w-[18.75rem] md:gap-4">
+                    <font-awesome icon="money-bill-transfer" class="text-7xl" />
+                    <div>
+                        <h6 class="mb-0 text-lg font-bold text-[#434343] md:mb-1 dark:text-gray-100">Pay advance</h6>
+                        <p class="text-sm text-gray-500">Choose the location where your food will be delivered.</p>
+                    </div>
+                </div>
+
+                <div class="flex w-full flex-col items-center gap-2 text-center md:w-[18.75rem] md:gap-4">
+                    <font-awesome icon="utensils" class="text-7xl" />
+                    <div>
+                        <h6 class="mb-0 text-lg font-bold text-[#434343] md:mb-1 dark:text-gray-100">Enjoy meals</h6>
+                        <p class="text-sm text-gray-500">Choose the location where your food will be delivered.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <!-- search by food -->
-    <div class="mt-10 px-4 lg:px-0 w-full max-w-5xl mx-auto mb-20">
-        <h2 class="md:text-3xl text-2xl dark:text-gray-100 font-bold text-center md:text-left mb-6">Search by
-            food</h2>
-        <div class="flex gap-2 flex-wrap justify-center md:justify-between">
-            <SearchByFoodItem title="Pizza" imgPath="/img/pizza_search.jpg" pageLink="#" />
-            <SearchByFoodItem title="Burger" imgPath="/img/burger_search.jpg" pageLink="#" />
-            <SearchByFoodItem title="Noodles" imgPath="/img/noodles_search.jpg" pageLink="#" />
-            <SearchByFoodItem title="Sub-sandiwch" imgPath="/img/chowmein_search.jpg" pageLink="#" />
-            <SearchByFoodItem title="Chow Mein" imgPath="/img/noodles_search.jpg" pageLink="#" />
-            <SearchByFoodItem title="Steak" imgPath="/img/steak.jpg" pageLink="#" />
+        <!-- popular items section -->
+        <div class="mx-auto mb-20 w-full max-w-5xl px-4 lg:px-0">
+            <h1 class="mb-6 text-center text-2xl font-bold text-black md:text-3xl dark:text-gray-100">Popular items</h1>
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+
+                <!-- food item 1 -->
+                <PopularItem
+title="Cheese Burger" brand-title="Burger Arena" img-path="/img/cheese_burger.jpg"
+                    :price="10.99" currency-symbol="$" details-page-link="#" :rating="4.5" />
+
+                <!-- food item 2 -->
+                <PopularItem
+title="Toffe’s Cake" brand-title="Top Sticks" img-path="/img/toffe_cake.png" :price="3.88"
+                    currency-symbol="$" details-page-link="#" :rating="4.5" />
+
+                <!-- food item 3 -->
+                <PopularItem
+title="Dancake" brand-title="Cake World" img-path="/img/dancake.png" :price="3.88"
+                    currency-symbol="$" details-page-link="#" :rating="4.5" />
+
+                <!-- food item 4 -->
+                <PopularItem
+title="Crispy Sandwitch" brand-title="Fastfood Dine" img-path="/img/crispy_cake.png"
+                    :price="3.88" currency-symbol="$" details-page-link="#" :rating="4.5" />
+
+                <!-- food item 5 -->
+                <PopularItem
+title="Thai Soup" brand-title="Foody main" img-path="/img/thai_soup.png" :price="3.88"
+                    currency-symbol="$" details-page-link="#" :rating="4.5" />
+            </div>
         </div>
+
+        <!-- featured restaurants section -->
+        <div class="mx-auto mb-20 w-full max-w-5xl px-4 md:px-4 lg:px-0">
+            <h1 class="mb-6 text-center text-2xl font-bold text-black md:text-3xl dark:text-gray-100">Featured
+                Restaurants
+            </h1>
+            <div class="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
+
+                <FeaturedRestaurant
+img-path="/img/feature-1.png" brand-title="Foodworld"
+                    brand-img-path="/img/friendly.png" :discount="15" :is-open-tomorrow="true" :rating="4.5" />
+
+                <!-- item 2 -->
+                <FeaturedRestaurant
+img-path="/img/feature-2.png" brand-title="Pizza Hub"
+                    brand-img-path="/img/pizzahub.png" :discount="15" :is-open-tomorrow="true" :rating="4.5" />
+
+                <!-- item 3 -->
+                <FeaturedRestaurant
+img-path="/img/feature-3.png" brand-title="Donuts hut"
+                    brand-img-path="/img/donuts-hut-logo.png" :discount="15" :is-open-tomorrow="true" :rating="4.5" />
+
+                <!-- item 4 -->
+                <FeaturedRestaurant
+img-path="/img/feature-4.png" brand-title="Donuts hut"
+                    brand-img-path="/img/subway.png" :discount="15" :is-open-tomorrow="true" :rating="4.5" />
+
+                <!-- item 5 -->
+                <FeaturedRestaurant
+img-path="/img/feature-5.png" brand-title="Ruby Tuesday"
+                    brand-img-path="/img/ruby.png" :discount="15" :is-open-tomorrow="true" :rating="4.5" />
+
+                <!-- item 6 -->
+                <FeaturedRestaurant
+img-path="/img/feature-6.png" brand-title="Kuakata Fried Chicken"
+                    brand-img-path="/img/kfc.png" :discount="15" :is-open-tomorrow="true" :rating="4.5" />
+
+                <!-- item 7 -->
+                <FeaturedRestaurant
+img-path="/img/feature-7.png" brand-title="Red Square"
+                    brand-img-path="/img/red-squre.png" :discount="15" :is-open-tomorrow="true" :rating="4.5" />
+
+                <!-- item 8 -->
+                <FeaturedRestaurant
+img-path="/img/feature-8.png" brand-title="Taco Bell" brand-img-path="/img/taco.png"
+                    :discount="15" :is-open-tomorrow="true" :rating="4.5" />
+
+            </div>
+
+            <div class="mt-4 w-full md:mt-12 md:text-center">
+                <button
+                    class="w-full cursor-pointer rounded-sm bg-black px-8 py-2 text-white hover:bg-gray-800 hover:transition-colors active:scale-95 active:transition-all md:w-fit md:px-16">
+                    <span class="font-bold">View All</span>
+                    <i class="fa-solid fa-arrow-right" />
+                </button>
+            </div>
+        </div>
+
+        <!-- search by food -->
+        <div class="mx-auto mb-20 mt-10 w-full max-w-5xl px-4 lg:px-0">
+            <h2 class="mb-6 text-center text-2xl font-bold md:text-left md:text-3xl dark:text-gray-100">Search by
+                food</h2>
+            <div class="flex flex-wrap justify-center gap-2 md:justify-between">
+                <SearchByFoodItem title="Pizza" img-path="/img/pizza_search.jpg" page-link="#" />
+                <SearchByFoodItem title="Burger" img-path="/img/burger_search.jpg" page-link="#" />
+                <SearchByFoodItem title="Noodles" img-path="/img/noodles_search.jpg" page-link="#" />
+                <SearchByFoodItem title="Sub-sandiwch" img-path="/img/chowmein_search.jpg" page-link="#" />
+                <SearchByFoodItem title="Chow Mein" img-path="/img/noodles_search.jpg" page-link="#" />
+                <SearchByFoodItem title="Steak" img-path="/img/steak.jpg" page-link="#" />
+            </div>
+        </div>
+
+        <!-- deals section -->
+        <div class="mx-auto mb-20 max-w-5xl px-4 lg:px-0">
+            <!-- details card 1 -->
+            <BestDealsItem
+                title="Best Deals" title-sub-part="Crispy Sandwich"
+                description="Enjoy the large size of sandwiches. Complete perfect slice of sandwiches."
+                img-path="/img/deals-1.png" />
+
+            <BestDealsItem
+                title="Celebrate parties with" title-sub-part="Fried Chicken" description="Get the best fried chicken smeared with a lip smacking lemon chili flavor. Check out
+                        best deals for fried chicken." img-path="/img/details-2.png" :is-reverse="true" />
+
+            <BestDealsItem
+title="Wanna eat hot & spicy" title-sub-part="Pizza?" description="Pair up with a friend and enjoy the hot and crispy pizza pops. Try it
+                        with the best deals." img-path="/img/details-2.png" />
+        </div>
+
+        <!-- cta -->
+        <CTA />
+
+        <!-- cta -->
+        <AppFooter />
     </div>
-
-    <!-- deals section -->
-    <div class="mb-20 max-w-5xl mx-auto px-4 lg:px-0">
-        <!-- details card 1 -->
-        <BestDealsItem
-            title="Best Deals"
-            titleSubPart="Crispy Sandwich"
-            description="Enjoy the large size of sandwiches. Complete perfect slice of sandwiches."
-            imgPath="/img/deals-1.png"
-        />
-
-        <BestDealsItem
-            title="Celebrate parties with"
-            titleSubPart="Fried Chicken"
-            description="Get the best fried chicken smeared with a lip smacking lemon chili flavor. Check out
-                        best deals for fried chicken."
-            imgPath="/img/details-2.png"
-            :isReverse="true"
-        />
-
-        <BestDealsItem
-            title="Wanna eat hot & spicy"
-            titleSubPart="Pizza?"
-            description="Pair up with a friend and enjoy the hot and crispy pizza pops. Try it
-                        with the best deals."
-            imgPath="/img/details-2.png"
-        />
-    </div>
-
-    <!-- cta -->
-    <CTA />
-
-    <!-- cta -->
-    <Footer />
 
 </template>
