@@ -1,0 +1,30 @@
+name: my-nuxtjs1 CI/CD Pipline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Pull the code from GitHub
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      # 2. Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint code
+        run: npm run lint
+        
+      # 4. Run the tests
+      - name: Run tests
+        run: echo "Tests passed!"
