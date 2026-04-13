@@ -60,7 +60,12 @@ jobs:
         run: vercel pull --yes --environment=$(if [ "${{ github.ref }}" = "refs/heads/main" ]; then echo "production"; else echo "preview"; fi) --token=$VERCEL_TOKEN
 
       - name: Build Project Artifacts
-        run: vercel build --token=$VERCEL_TOKEN --env=${{ steps.set-env.outputs.vercel_env }}
+        run: |
+          if [ "${{ steps.set-env.outputs.vercel_env }}" == "production"]; then
+            vercel build --prod --token=$VERCEL_TOKEN
+          else
+            vercel build --token=$VERCEL_TOKEN
+          fi
 
       - name: Deploy to Vercel (Production)
         if: github.ref == 'refs/heads/main'
