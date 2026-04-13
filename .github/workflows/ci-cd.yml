@@ -1,7 +1,10 @@
-name: my-nuxtjs1 CI/CD Pipline
+name: my-nuxtjs1 CI/CD Pipeline
 
 on:
   push:
+    branches:
+      - main
+  pull_request: # Added this so you get those "Preview" links we discussed!
     branches:
       - main
 
@@ -9,23 +12,63 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      # 1. Pull the code from GitHub
       - name: Checkout code
         uses: actions/checkout@v4
       
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22 # Use the stable LTS version
 
-      # 2. Install dependencies
       - name: Install dependencies
         run: npm install
       
-      # 3. Generate the .nuxt directory
       - name: Generate .nuxt directory
         run: npx nuxi prepare
 
-      # 4. Run the tests
       - name: Run tests
         run: echo "Tests passed!"
+
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.MY_NUXTJS1_VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_MY_NUXTJS1_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=$(if [ "${{ github.ref }}" = "refs/heads/main" ]; then echo "production"; else echo "preview"; fi) --token=$VERCEL_TOKEN
+
+      - name: Build Project Artifacts
+        run: vercel build --token=$VERCEL_TOKEN
+
+      - name: Deploy to Vercel (Production)
+        if: github.ref == 'refs/heads/main'
+        run: vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+
+      - name: Deploy to Vercel (Preview)
+        if: github.event_name == 'pull_request'
+        id: deploy_preview # Added ID to reference this step's output
+        run: |
+          # Capture the URL printed by Vercel and save it to GitHub Outputs
+          PREVIEW_URL=$(vercel deploy --prebuilt --token=$VERCEL_TOKEN)
+          echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+
+      - name: Comment on Pull Request
+        if: github.event_name == 'pull_request'
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            🚀 **Nuxt Deployment Successful!**
+            
+            | Name | Link |
+            | :--- | :--- |
+            | **Preview URL** | ${{ steps.deploy_preview.outputs.url }} |
+            | **Status** | ✅ Ready for Review |
+          repo-token: ${{ secrets.GITHUB_TOKEN }} # To post a comment on a repository, you need permission (token).
