@@ -59,24 +59,16 @@ jobs:
       - name: Pull Vercel Environment Information
         run: vercel pull --yes --environment=$(if [ "${{ github.ref }}" = "refs/heads/main" ]; then echo "production"; else echo "preview"; fi) --token=$VERCEL_TOKEN
 
-      - name: Build Project Artifacts
-        run: |
-          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-            vercel build --prod --token=$VERCEL_TOKEN
-          else
-            vercel build --token=$VERCEL_TOKEN
-          fi
-
       - name: Deploy to Vercel (Production)
         if: github.ref == 'refs/heads/main'
-        run: vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+        run: vercel deploy --prod --token=$VERCEL_TOKEN
 
       - name: Deploy to Vercel (Preview)
         if: github.event_name == 'pull_request'
         id: deploy_preview # ID to reference this step's output
         run: |
           # Capture the URL printed by Vercel and save it to GitHub Outputs
-          PREVIEW_URL=$(vercel deploy --prebuilt --token=$VERCEL_TOKEN)
+          PREVIEW_URL=$(vercel deploy --token=$VERCEL_TOKEN)
           echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
 
       - name: Comment on Pull Request
