@@ -61,7 +61,7 @@ jobs:
 
       - name: Build Project Artifacts
         run: |
-          if [ "${{ steps.set-env.outputs.vercel_env }}" == "production"]; then
+          if [ ${{ github.ref }}" = "refs/heads/main" ]; then
             vercel build --prod --token=$VERCEL_TOKEN
           else
             vercel build --token=$VERCEL_TOKEN
