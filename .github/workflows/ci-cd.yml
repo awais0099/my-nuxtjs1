@@ -39,6 +39,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
 
@@ -54,7 +59,7 @@ jobs:
 
       - name: Deploy to Vercel (Preview)
         if: github.event_name == 'pull_request'
-        id: deploy_preview # Added ID to reference this step's output
+        id: deploy_preview # ID to reference this step's output
         run: |
           # Capture the URL printed by Vercel and save it to GitHub Outputs
           PREVIEW_URL=$(vercel deploy --prebuilt --token=$VERCEL_TOKEN)
@@ -66,7 +71,7 @@ jobs:
         with:
           message: |
             🚀 **Nuxt Deployment Successful!**
-            
+
             | Name | Link |
             | :--- | :--- |
             | **Preview URL** | ${{ steps.deploy_preview.outputs.url }} |
