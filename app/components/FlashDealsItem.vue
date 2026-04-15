@@ -17,7 +17,7 @@ defineProps<{
       />
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
       <div
-        class="absolute bottom-0 left-0 z-10 flex h-[70px] w-[112px] items-center justify-center rounded-tr-[25px] bg-yellow-500"
+        class="absolute bottom-0 left-0 z-10 flex h-[70px] w-[112px] items-center justify-center rounded-tr-[25px] bg-yellow-500 dark:bg-amber-800"
       >
         <p class="text-4xl font-extrabold text-white md:text-6xl">
           {{ discount }}
@@ -33,7 +33,7 @@ defineProps<{
         {{ title }}
       </h4>
       <span
-        class="mt-1 inline-block rounded-md bg-yellow-100 px-2 py-1 text-xs font-bold uppercase text-yellow-700 md:mt-2"
+        class="mt-1 inline-block rounded-md bg-yellow-200 dark:bg-amber-600 px-2 py-1 text-xs font-bold uppercase text-yellow-700 dark:text-gray-100 md:mt-2"
       >
         <font-awesome
           icon="clock"

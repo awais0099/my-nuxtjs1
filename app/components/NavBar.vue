@@ -1,3 +1,16 @@
+<script lang="ts" setup>
+  defineProps<{
+    isDarkMode: boolean
+  }>()
+
+  const emit = defineEmits(['toggleDarkMode'])
+
+  const toggleDarkMode = () => {
+    emit('toggleDarkMode');
+  };
+
+</script>
+
 <template>
   <nav class="mx-auto flex w-full max-w-5xl flex-col gap-2 p-4 md:flex-row md:justify-between">
     <!-- 1 -->
@@ -42,20 +55,35 @@
           <button
             aria-label="Submit Search"
             type="submit"
-            class="cursor-pointer rounded-r-md bg-black px-4 py-[10px] shadow-lg hover:bg-gray-800 hover:transition-colors active:scale-95 active:transition-all dark:bg-gray-100"
+            class="cursor-pointer rounded-r-md bg-black px-4 py-[10px] shadow-lg hover:bg-gray-800 dark:hover:bg-gray-300 hover:transition-colors active:scale-95 active:transition-all dark:bg-gray-100"
           >
             <font-awesome
               icon="magnifying-glass"
-              class="text-base font-bold text-white"
+              class="text-base font-bold text-white dark:text-black font-bold"
             />
           </button>
         </div>
       </form>
       <NuxtLink
         to="#"
-        class="block w-full rounded-md bg-black px-5 py-2 text-center font-bold text-white shadow-xl hover:bg-gray-800 hover:transition-colors active:scale-95 active:transition-all dark:bg-gray-100 dark:text-black"
+        class="block w-full rounded-md bg-black px-5 py-2 text-center font-bold text-white shadow-xl hover:bg-gray-800 dark:hover:bg-gray-300 hover:transition-colors active:scale-95 active:transition-all dark:bg-gray-100 dark:text-black"
       >
         Login</NuxtLink>
+      <button
+        @click="toggleDarkMode"
+        class="px-4 py-2 rounded-md bg-gray-800 dark:bg-gray-700 text-white dark:text-white"
+      >
+        <font-awesome
+          icon="moon"
+          class="text-base"
+          v-if="!isDarkMode"
+        />
+        <font-awesome
+          icon="sun"
+          class="text-base"
+          v-else
+        />
+      </button>
     </div>
   </nav>
 </template>

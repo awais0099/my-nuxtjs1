@@ -255,7 +255,7 @@
               <button
                 type="submit"
                 aria-label="Subscribe"
-                class="rounded-md bg-yellow-500 px-3 py-2 text-white shadow-lg shadow-yellow-500/50"
+                class="rounded-md bg-yellow-500 dark:bg-amber-800 px-3 py-2 text-white shadow-lg dark:shadow-amber-800/30 shadow-yellow-500/50"
               >
                 Subscribe
               </button>

@@ -37,7 +37,7 @@ defineProps<{
         {{ currencySymbol }}{{ price }}
       </p>
       <button
-        class="mt-1 w-full cursor-pointer rounded-sm bg-yellow-500 py-2 font-black text-white hover:bg-yellow-400 hover:transition-colors active:scale-95 active:transition-all md:mt-2"
+        class="mt-1 w-full cursor-pointer rounded-sm bg-yellow-500 dark:bg-amber-800 py-2 font-black text-white dark:hover:bg-amber-600 hover:bg-yellow-400 hover:transition-colors active:scale-95 active:transition-all md:mt-2"
       >
         Order
         Now

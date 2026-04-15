@@ -5,7 +5,14 @@ export default defineNuxtConfig({
     '@vesp/nuxt-fontawesome',
     '@nuxt/image',
     '@nuxt/eslint',
+    '@nuxtjs/color-mode'
   ],
+  colorMode: {
+    preference: 'system', // default value: 'system', 'light', or 'dark'
+    fallback: 'light',   // fallback if no system preference is found
+    classSuffix: '',     // crucial for Tailwind!
+    storageKey: 'nuxt-color-mode'
+  },
   devtools: { enabled: true },
   css: [
     '~/assets/css/main.css',
@@ -40,6 +47,8 @@ export default defineNuxtConfig({
         'motorcycle',
         'bag-shopping',
         'star',
+        'moon',
+        'sun',
       ],
       regular: ['comment', 'clock'],
       brands: ['facebook', 'twitter', 'youtube', 'instagram'],
