@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import CTA from "~/components/CTA.vue";
-import FlashDealsItem from "~/components/FlashDealsItem.vue";
-import NavBar from "~/components/NavBar.vue";
-import AppFooter from "~/components/AppFooter.vue";
+import CTA from '~/components/CTA.vue'
+import FlashDealsItem from '~/components/FlashDealsItem.vue'
+import NavBar from '~/components/NavBar.vue'
+import AppFooter from '~/components/AppFooter.vue'
 </script>
 
 <template>
-  <div id="wrapper" class="bg-white dark:bg-black/80">
-    
+  <div
+    id="wrapper"
+    class="bg-white dark:bg-black/80"
+  >
     <NavBar />
 
     <!-- hero section -->
-    <div class="w-full bg-yellow-500 dark:bg-amber-800 pt-4">
+    <div class="w-full bg-yellow-500 pt-4 dark:bg-amber-800">
       <div class="relative mx-auto max-w-5xl md:h-[25rem] md:px-8 lg:px-0">
         <div
           class="flex h-full flex-col items-center justify-center gap-1 px-4 text-center md:w-[28.125rem] md:items-start md:gap-2 md:px-0 md:text-left lg:w-[34.375rem]"
@@ -30,18 +32,14 @@ import AppFooter from "~/components/AppFooter.vue";
                   icon="motorcycle"
                   class="text-[#F58D00] dark:text-amber-800"
                 />
-                <span class="font-bold text-[#F58D00] dark:text-amber-800"
-                  >Delivery</span
-                >
+                <span class="font-bold text-[#F58D00] dark:text-amber-800">Delivery</span>
               </div>
               <div class="flex items-center gap-2">
                 <font-awesome
                   icon="bag-shopping"
                   class="text-gray-500 dark:text-amber-800"
                 />
-                <span class="font-bold text-gray-500 dark:text-amber-800"
-                  >Pickup</span
-                >
+                <span class="font-bold text-gray-500 dark:text-amber-800">Pickup</span>
               </div>
             </div>
 
@@ -61,11 +59,11 @@ import AppFooter from "~/components/AppFooter.vue";
                   type="text"
                   name="address"
                   placeholder="Enter your address"
-                  class="relative w-full bg-gray-200 py-4 pl-10 dark:focus-visible:outline-amber-800 focus-visible:outline-yellow-500"
-                />
+                  class="relative w-full bg-gray-200 py-4 pl-10 focus-visible:outline-yellow-500 dark:focus-visible:outline-amber-800"
+                >
               </div>
               <button
-                class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-yellow-500 dark:bg-amber-800 dark:hover:bg-amber-600 px-8 py-4 transition-transform hover:bg-[#F58D00]/80 active:scale-95"
+                class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-yellow-500 px-8 py-4 transition-transform hover:bg-[#F58D00]/80 active:scale-95 dark:bg-amber-800 dark:hover:bg-amber-600"
               >
                 <span class="font-bold text-white">Find Food</span>
               </button>
@@ -113,15 +111,15 @@ import AppFooter from "~/components/AppFooter.vue";
 
     <!-- how does it work section -->
     <div
-      class="mb-12 bg-gradient-to-b from-gray-100 to-white px-4 py-6 md:px-0 md:py-12 dark:from-gray-800 dark:to-[#121212]"
+      class="mb-12 bg-gradient-to-b from-gray-100 to-white px-4 py-6 dark:from-gray-800 dark:to-[#121212] md:px-0 md:py-12"
     >
       <h1
-        class="mb-12 text-center text-2xl font-bold text-black md:text-3xl dark:text-gray-100"
+        class="mb-12 text-center text-2xl font-bold text-black dark:text-gray-100 md:text-3xl"
       >
         How does it work
       </h1>
       <div
-        class="flex flex-col md:justify-center gap-5 md:mx-auto md:w-[85%] md:flex-row"
+        class="flex flex-col gap-5 md:mx-auto md:w-[85%] md:flex-row md:justify-center"
       >
         <div
           class="flex w-full flex-col items-center text-center md:w-[18.75rem] md:gap-4"
@@ -132,7 +130,7 @@ import AppFooter from "~/components/AppFooter.vue";
           />
           <div>
             <h6
-              class="mb-0 text-lg font-bold text-[#434343] md:mb-1 dark:text-gray-100"
+              class="mb-0 text-lg font-bold text-[#434343] dark:text-gray-100 md:mb-1"
             >
               Select location
             </h6>
@@ -151,7 +149,7 @@ import AppFooter from "~/components/AppFooter.vue";
           />
           <div>
             <h6
-              class="mb-0 text-lg font-bold text-[#434343] md:mb-1 dark:text-gray-100"
+              class="mb-0 text-lg font-bold text-[#434343] dark:text-gray-100 md:mb-1"
             >
               Choose order
             </h6>
@@ -170,7 +168,7 @@ import AppFooter from "~/components/AppFooter.vue";
           />
           <div>
             <h6
-              class="mb-0 text-lg font-bold text-[#434343] md:mb-1 dark:text-gray-100"
+              class="mb-0 text-lg font-bold text-[#434343] dark:text-gray-100 md:mb-1"
             >
               Pay advance
             </h6>
@@ -189,7 +187,7 @@ import AppFooter from "~/components/AppFooter.vue";
           />
           <div>
             <h6
-              class="mb-0 text-lg font-bold text-[#434343] md:mb-1 dark:text-gray-100"
+              class="mb-0 text-lg font-bold text-[#434343] dark:text-gray-100 md:mb-1"
             >
               Enjoy meals
             </h6>
@@ -204,7 +202,7 @@ import AppFooter from "~/components/AppFooter.vue";
     <!-- popular items section -->
     <div class="mx-auto mb-20 w-full max-w-5xl px-4 lg:px-0">
       <h1
-        class="mb-6 text-center text-2xl font-bold text-black md:text-3xl dark:text-gray-100"
+        class="mb-6 text-center text-2xl font-bold text-black dark:text-gray-100 md:text-3xl"
       >
         Popular items
       </h1>
@@ -271,7 +269,7 @@ import AppFooter from "~/components/AppFooter.vue";
     <!-- featured restaurants section -->
     <div class="mx-auto mb-20 w-full max-w-5xl px-4 md:px-4 lg:px-0">
       <h1
-        class="mb-6 text-center text-2xl font-bold text-black md:text-3xl dark:text-gray-100"
+        class="mb-6 text-center text-2xl font-bold text-black dark:text-gray-100 md:text-3xl"
       >
         Featured Restaurants
       </h1>
@@ -360,7 +358,7 @@ import AppFooter from "~/components/AppFooter.vue";
 
       <div class="mt-4 w-full md:mt-12 md:text-center">
         <button
-          class="w-full cursor-pointer rounded-sm bg-black dark:bg-gray-100 px-8 py-2 text-white dark:text-black dark:hover:bg-gray-300 hover:bg-gray-800 hover:transition-colors active:scale-95 active:transition-all md:w-fit md:px-16"
+          class="w-full cursor-pointer rounded-sm bg-black px-8 py-2 text-white hover:bg-gray-800 hover:transition-colors active:scale-95 active:transition-all dark:bg-gray-100 dark:text-black dark:hover:bg-gray-300 md:w-fit md:px-16"
         >
           <span class="font-bold">View All</span>
           <i class="fa-solid fa-arrow-right" />
@@ -371,7 +369,7 @@ import AppFooter from "~/components/AppFooter.vue";
     <!-- search by food -->
     <div class="mx-auto mb-20 mt-10 w-full max-w-5xl px-4 lg:px-0">
       <h2
-        class="mb-6 text-center text-2xl font-bold md:text-left md:text-3xl dark:text-gray-100"
+        class="mb-6 text-center text-2xl font-bold dark:text-gray-100 md:text-left md:text-3xl"
       >
         Search by food
       </h2>

@@ -5,18 +5,18 @@ export default defineNuxtConfig({
     '@vesp/nuxt-fontawesome',
     '@nuxt/image',
     '@nuxt/eslint',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
   ],
-  colorMode: {
-    preference: 'system', // default value: 'system', 'light', or 'dark'
-    fallback: 'light',   // fallback if no system preference is found
-    classSuffix: '',     // crucial for Tailwind!
-    storageKey: 'nuxt-color-mode'
-  },
   devtools: { enabled: true },
   css: [
     '~/assets/css/main.css',
   ],
+  colorMode: {
+    preference: 'system', // default value: 'system', 'light', or 'dark'
+    fallback: 'light', // fallback if no system preference is found
+    classSuffix: '', // crucial for Tailwind!
+    storageKey: 'nuxt-color-mode',
+  },
   compatibilityDate: '2025-07-15',
   postcss: {
     plugins: {

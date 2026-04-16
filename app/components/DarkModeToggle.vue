@@ -1,16 +1,16 @@
 <template>
   <button
+    class="rounded-full p-2 focus:outline-none"
     @click="toggleDarkMode"
-    class="p-2 rounded-full focus:outline-none"
   >
     {{ darkMode ? '🌞' : '🌙' }}
   </button>
 </template>
 
 <script setup>
-const darkMode = useDarkMode();
+const darkMode = useDarkMode()
 
 const toggleDarkMode = () => {
-  darkMode.value = !darkMode.value;
-};
+  darkMode.value = !darkMode.value
+}
 </script>

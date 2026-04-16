@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <div
-    class="mb-10 flex h-[12.875rem] flex-col-reverse rounded-lg bg-white shadow-2xl md:h-80 dark:bg-gray-900"
+    class="mb-10 flex h-[12.875rem] flex-col-reverse rounded-lg bg-white shadow-2xl dark:bg-gray-900 md:h-80"
     :class="isReverse ? 'md:flex-row-reverse' : 'md:flex-row'"
   >
     <div
@@ -30,7 +30,7 @@ defineProps<{
         </p>
       </div>
       <button
-        class="cursor-pointer rounded-md bg-yellow-500 dark:bg-amber-800 py-3 text-center font-bold text-white shadow-lg shadow-yellow-500/30 dark:shadow-amber-800/30 transition-colors dark:hover:bg-amber-600 hover:bg-yellow-400 active:scale-95"
+        class="cursor-pointer rounded-md bg-yellow-500 py-3 text-center font-bold text-white shadow-lg shadow-yellow-500/30 transition-colors hover:bg-yellow-400 active:scale-95 dark:bg-amber-800 dark:shadow-amber-800/30 dark:hover:bg-amber-600"
       >
         PROCEED TO ORDER
       </button>

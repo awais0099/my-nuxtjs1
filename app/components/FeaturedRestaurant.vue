@@ -61,7 +61,7 @@ defineProps<{
     </div>
     <span
       v-if="isOpenTomorrow"
-      class="mt-2 inline-flex items-center gap-1.5 rounded-lg bg-yellow-200 dark:bg-amber-600 dark:text-gray-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-yellow-700"
+      class="mt-2 inline-flex items-center gap-1.5 rounded-lg bg-yellow-200 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-yellow-700 dark:bg-amber-600 dark:text-gray-100"
     >
       <font-awesome :icon="['far', 'clock']" /> Opens tomorrow
     </span>
