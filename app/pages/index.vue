@@ -3,28 +3,12 @@ import CTA from "~/components/CTA.vue";
 import FlashDealsItem from "~/components/FlashDealsItem.vue";
 import NavBar from "~/components/NavBar.vue";
 import AppFooter from "~/components/AppFooter.vue";
-
-const colorMode = useColorMode();
-const isDarkMode = ref(colorMode.value === 'dark');
-
-const toggleDarkMode = () => {
-  console.log("toggleDarkMode");
-  isDarkMode.value = !isDarkMode.value;
-  colorMode.preference = isDarkMode.value ? 'dark' : 'light';
-  console.log("Mode changed to:", colorMode.preference);
-};
 </script>
 
 <template>
   <div id="wrapper" class="bg-white dark:bg-black/80">
-    <button
-      @click="toggleDarkMode"
-      class="px-4 py-2 rounded-full bg-gray-200 dark:bg-gray-700 text-black dark:text-white"
-    >
-      {{ isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode" }}
-    </button>
-
-    <!-- <NavBar :isDarkMode="isDarkMode" @toggleDarkMode="toggleDarkMode" /> -->
+    
+    <NavBar />
 
     <!-- hero section -->
     <div class="w-full bg-yellow-500 dark:bg-amber-800 pt-4">

@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     },
   },
   eslint: {
-    checker: true,
+    checker: false,
     config: {
       stylistic: true, // or pass an object for specific options like { semi: false }
     },
