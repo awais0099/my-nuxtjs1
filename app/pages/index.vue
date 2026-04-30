@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import CTA from '~/components/CTA.vue'
 import FlashDealsItem from '~/components/FlashDealsItem.vue'
-import NavBar from '~/components/NavBar.vue'
-import AppFooter from '~/components/AppFooter.vue'
+
+useHead({
+  title: 'Home - foodWaGong',
+});
 </script>
 
 <template>
@@ -10,7 +12,6 @@ import AppFooter from '~/components/AppFooter.vue'
     id="wrapper"
     class="bg-white dark:bg-black/80"
   >
-    <NavBar />
 
     <!-- hero section -->
     <div class="w-full bg-yellow-500 pt-4 dark:bg-amber-800">
@@ -267,104 +268,122 @@ import AppFooter from '~/components/AppFooter.vue'
     </div>
 
     <!-- featured restaurants section -->
-    <div class="mx-auto mb-20 w-full max-w-5xl px-4 md:px-4 lg:px-0">
-      <h1
+    <section aria-labelledby="featured-heading" class="mx-auto mb-20 w-full max-w-5xl px-4 md:px-4 lg:px-0">
+      <h2
+        id="featured-heading"
         class="mb-6 text-center text-2xl font-bold text-black dark:text-gray-100 md:text-3xl"
       >
         Featured Restaurants
-      </h1>
-      <div
+      </h2>
+      <ul
         class="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4"
       >
-        <FeaturedRestaurant
-          img-path="/img/feature-1.png"
-          brand-title="Foodworld"
-          brand-img-path="/img/friendly.png"
-          :discount="15"
-          :is-open-tomorrow="true"
-          :rating="4.5"
-        />
+        <!-- item 1 -->
+        <li>
+          <FeaturedRestaurant
+            img-path="/img/feature-1.png"
+            brand-title="Foodworld"
+            brand-img-path="/img/friendly.png"
+            :discount="15"
+            :is-open-tomorrow="true"
+            :rating="4.5"
+          />
+        </li>
 
         <!-- item 2 -->
-        <FeaturedRestaurant
-          img-path="/img/feature-2.png"
-          brand-title="Pizza Hub"
-          brand-img-path="/img/pizzahub.png"
-          :discount="15"
-          :is-open-tomorrow="true"
-          :rating="4.5"
-        />
+        <li>
+          <FeaturedRestaurant
+            img-path="/img/feature-2.png"
+            brand-title="Pizza Hub"
+            brand-img-path="/img/pizzahub.png"
+            :discount="15"
+            :is-open-tomorrow="true"
+            :rating="4.5"
+          />
+        </li>
 
         <!-- item 3 -->
-        <FeaturedRestaurant
-          img-path="/img/feature-3.png"
-          brand-title="Donuts hut"
-          brand-img-path="/img/donuts-hut-logo.png"
-          :discount="15"
-          :is-open-tomorrow="true"
-          :rating="4.5"
-        />
+        <li>
+          <FeaturedRestaurant
+            img-path="/img/feature-3.png"
+            brand-title="Donuts hut"
+            brand-img-path="/img/donuts-hut-logo.png"
+            :discount="15"
+            :is-open-tomorrow="true"
+            :rating="4.5"
+          />
+        </li>
 
         <!-- item 4 -->
-        <FeaturedRestaurant
-          img-path="/img/feature-4.png"
-          brand-title="Donuts hut"
-          brand-img-path="/img/subway.png"
-          :discount="15"
-          :is-open-tomorrow="true"
-          :rating="4.5"
-        />
+        <li>
+          <FeaturedRestaurant
+            img-path="/img/feature-4.png"
+            brand-title="Donuts hut"
+            brand-img-path="/img/subway.png"
+            :discount="15"
+            :is-open-tomorrow="true"
+            :rating="4.5"
+          />
+        </li>
 
         <!-- item 5 -->
-        <FeaturedRestaurant
-          img-path="/img/feature-5.png"
-          brand-title="Ruby Tuesday"
-          brand-img-path="/img/ruby.png"
-          :discount="15"
-          :is-open-tomorrow="true"
-          :rating="4.5"
-        />
+        <li>
+          <FeaturedRestaurant
+            img-path="/img/feature-5.png"
+            brand-title="Ruby Tuesday"
+            brand-img-path="/img/ruby.png"
+            :discount="15"
+            :is-open-tomorrow="true"
+            :rating="4.5"
+          />
+        </li>
 
         <!-- item 6 -->
-        <FeaturedRestaurant
-          img-path="/img/feature-6.png"
-          brand-title="Kuakata Fried Chicken"
-          brand-img-path="/img/kfc.png"
-          :discount="15"
-          :is-open-tomorrow="true"
-          :rating="4.5"
-        />
+        <li>
+          <FeaturedRestaurant
+            img-path="/img/feature-6.png"
+            brand-title="Kuakata Fried Chicken"
+            brand-img-path="/img/kfc.png"
+            :discount="15"
+            :is-open-tomorrow="true"
+            :rating="4.5"
+          />
+        </li>
 
         <!-- item 7 -->
-        <FeaturedRestaurant
-          img-path="/img/feature-7.png"
-          brand-title="Red Square"
-          brand-img-path="/img/red-squre.png"
-          :discount="15"
-          :is-open-tomorrow="true"
-          :rating="4.5"
-        />
+        <li>
+          <FeaturedRestaurant
+            img-path="/img/feature-7.png"
+            brand-title="Red Square"
+            brand-img-path="/img/red-squre.png"
+            :discount="15"
+            :is-open-tomorrow="true"
+            :rating="4.5"
+          />
+        </li>
 
         <!-- item 8 -->
-        <FeaturedRestaurant
-          img-path="/img/feature-8.png"
-          brand-title="Taco Bell"
-          brand-img-path="/img/taco.png"
-          :discount="15"
-          :is-open-tomorrow="true"
-          :rating="4.5"
-        />
-      </div>
+        <li>
+          <FeaturedRestaurant
+            img-path="/img/feature-8.png"
+            brand-title="Taco Bell"
+            brand-img-path="/img/taco.png"
+            :discount="15"
+            :is-open-tomorrow="true"
+            :rating="4.5"
+          />
+        </li>
+      </ul>
 
       <div class="mt-4 w-full md:mt-12 md:text-center">
         <button
           class="w-full cursor-pointer rounded-sm bg-black px-8 py-2 text-white hover:bg-gray-800 hover:transition-colors active:scale-95 active:transition-all dark:bg-gray-100 dark:text-black dark:hover:bg-gray-300 md:w-fit md:px-16"
         >
           <span class="font-bold">View All</span>
-          <i class="fa-solid fa-arrow-right" />
+          <font-awesome icon="arrow-up-right-from-square" aria-hidden="true" class="text-sm mb-0.5 ml-1" />
         </button>
       </div>
-    </div>
+    </section>
 
     <!-- search by food -->
     <div class="mx-auto mb-20 mt-10 w-full max-w-5xl px-4 lg:px-0">
@@ -438,7 +457,5 @@ import AppFooter from '~/components/AppFooter.vue'
     <!-- cta -->
     <CTA />
 
-    <!-- cta -->
-    <AppFooter />
   </div>
 </template>

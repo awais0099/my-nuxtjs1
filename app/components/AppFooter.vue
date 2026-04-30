@@ -214,24 +214,36 @@
           <h6 class="text-sm font-bold text-white/50">
             Follow US
           </h6>
-          <div>
-            <font-awesome
-              :icon="['fab', 'facebook']"
-              class="text-xl text-white/30"
-            />
-            <font-awesome
-              :icon="['fab', 'instagram']"
-              class="text-xl text-white/30"
-            />
-            <font-awesome
-              :icon="['fab', 'twitter']"
-              class="text-xl text-white/30"
-            />
-            <font-awesome
-              :icon="['fab', 'youtube']"
-              class="text-xl text-white/30"
-            />
-          </div>
+          <nav aria-label="Social Media Links">
+            <NuxtLink to="https://facebook.com/yourpage" aria-label="Follow us on Facebook" target="_blank">
+              <font-awesome
+                :icon="['fab', 'facebook']"
+                aria-hidden="true"
+                class="text-xl text-white/60"
+              />
+            </NuxtLink>
+            <NuxtLink to="https://twitter.com/yourpage" aria-label="Follow us on Twitter" target="_blank">
+              <font-awesome
+                :icon="['fab', 'twitter']"
+                aria-hidden="true"
+                class="text-xl text-white/60"
+              />
+            </NuxtLink>
+            <NuxtLink to="https://instagram.com/yourpage" aria-label="Follow us on Instagram" target="_blank">
+              <font-awesome
+                :icon="['fab', 'instagram']"
+                aria-hidden="true"
+                class="text-xl text-white/60"
+              />
+            </NuxtLink>
+            <NuxtLink to="https://youtube.com/yourpage" aria-label="Follow us on YouTube" target="_blank">
+              <font-awesome
+                :icon="['fab', 'youtube']"
+                aria-hidden="true"
+                class="text-xl text-white/60"
+              />
+            </NuxtLink>
+          </nav>
           <p class="text-sm font-semibold text-white/60">
             Receive exclusive offers in your mailbox
           </p>

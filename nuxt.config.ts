@@ -1,5 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+      }
+    }
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     '@vesp/nuxt-fontawesome',
@@ -49,6 +56,8 @@ export default defineNuxtConfig({
         'star',
         'moon',
         'sun',
+        'spinner',
+        'arrow-up-right-from-square',
       ],
       regular: ['comment', 'clock'],
       brands: ['facebook', 'twitter', 'youtube', 'instagram'],
